@@ -54,7 +54,7 @@ CSharpEgitimKampi301.EFProject/
 
 Aşağıda, projenin Windows Forms arayüzüne ait örnek bir ekran görüntüsü bulunmaktadır:
 
-![Seyahat İstatistik Paneli](FrmStatistics.png)
+![Seyahat İstatistik Paneli](FrmStatistics.PNG)
 
 > 🎨 Flatuicolors kullanılarak yapılan renkli paneller, her bir istatistik bilgisini ayrı kutularda gösterecek şekilde tasarlanmıştır.  
 > Örneğin “Lokasyon Sayısı” mor panelde, “Rehber Sayısı” kırmızı panelde görüntülenir.

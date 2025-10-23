@@ -9,29 +9,39 @@ using System.Threading.Tasks;
 
 namespace CSharpEgitimKampi301.DataAccessLayer.Repositories
 {
-    internal class GenericRepository<T> :IGenericDal<T> where T : class
+    public class GenericRepository<T> : IGenericDal<T> where T : class
     {
         KampContext context = new KampContext();
         private readonly DbSet<T> _object;
-        public void Delete(int id)
+        public GenericRepository()
         {
-            throw new NotImplementedException();
+            _object = context.Set<T>();
+        }
+        public void Delete(T entity)
+        {
+            var deletedEntity = context.Entry(entity);
+            deletedEntity.State = EntityState.Deleted;
+            context.SaveChanges();
         }
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _object.ToList();
         }
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return _object.Find(id);
         }
         public void Insert(T entity)
         {
-            throw new NotImplementedException();
+            var addedEntity = context.Entry(entity);
+            addedEntity.State = EntityState.Added;
+            context.SaveChanges();
         }
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            var updatedEntity = context.Entry(entity);
+            updatedEntity.State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }
